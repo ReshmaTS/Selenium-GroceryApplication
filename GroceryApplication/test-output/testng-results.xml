@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-05T12:15:56 EST" name="Default suite" finished-at="2025-11-05T12:16:08 EST" duration-ms="11341">
+    <groups>
+    </groups>
+    <test started-at="2025-11-05T12:15:56 EST" name="Default test" finished-at="2025-11-05T12:16:08 EST" duration-ms="11341">
+      <class name="testScript.HomeTest">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScript.HomeTest@18078bef]" started-at="2025-11-05T12:15:56 EST" name="initializeBrowser" finished-at="2025-11-05T12:16:00 EST" duration-ms="4125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="adminLogout()[pri:5, instance:testScript.HomeTest@18078bef]" started-at="2025-11-05T12:16:00 EST" name="adminLogout" description="verify Logout from admin,  grocery application " finished-at="2025-11-05T12:16:08 EST" duration-ms="7172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLogout -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScript.HomeTest@18078bef]" started-at="2025-11-05T12:16:08 EST" name="closeBrowser" finished-at="2025-11-05T12:16:08 EST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testScript.HomeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
