@@ -2,8 +2,10 @@ package testScript;
 
 import java.io.IOException;
 
+import org.apache.xmlbeans.impl.xpath.XPath;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
@@ -25,6 +27,11 @@ public class LoginTest extends TestNGBase {
 		
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
+		// hard assertion
+		String actual=driver.getCurrentUrl();
+		String expected="https://groceryapp.uniqassosiates.com/admin";
+		Assert.assertEquals(actual,expected);
+		
 	}
 	
 @Test(priority=2, description= "Verify Login with Valid username and invalid password")
@@ -40,7 +47,11 @@ public void verifyValidusernameInvalidPassword() throws IOException
 	
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
+	// Assertion
 	
+	String actualMessage=driver.getCurrentUrl();
+	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
+	Assert.assertEquals(actualMessage, expectedMessage);
 }
 
 @Test(priority=3,description= "Verify Login with Inalid username and invalid password")
@@ -56,6 +67,11 @@ public void verifyInvalidusernamevalidPass() throws IOException
 	
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
+	
+	
+	String actualMessage=driver.getCurrentUrl();
+	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
+	Assert.assertEquals(actualMessage, expectedMessage);
 }
 
 
@@ -73,6 +89,10 @@ public void verifyInvalidusernameInvalidpassword() throws IOException
 	
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
+	
+	String actualMessage=driver.getCurrentUrl();
+	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
+	Assert.assertEquals(actualMessage, expectedMessage);
 	
 }
 }

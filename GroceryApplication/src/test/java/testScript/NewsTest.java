@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
@@ -37,6 +38,12 @@ public class NewsTest extends TestNGBase
 		WebElement save=driver.findElement(By.xpath("//button[@name='create']"));
 		save.click();
 		
+		
+		
+		//Assertion
+		WebElement newalertbox = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+		Assert.assertTrue(newalertbox.isDisplayed(), "News created successfully alert box not displayed");
+		
 	}
 
 
@@ -68,6 +75,11 @@ public void searchNews() throws IOException, InterruptedException
 	WebElement  searchnews=driver.findElement(By.xpath("//button[@class='btn btn-danger btn-fix']"));
 	searchnews.click();
 	Thread.sleep(2500);	
+	
+	
+	String actualMessage=driver.getCurrentUrl();
+	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/news/index";
+	Assert.assertEquals(actualMessage, expectedMessage);
 }
 
 @Test(priority=3, description="Verify user can go back to Home page by clicking Home button from Manage News page")
@@ -91,6 +103,12 @@ public void verifyBacktoHomeFromManageNews() throws IOException, InterruptedExce
 // Back to home 
 	WebElement backtoHome=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/home']"));
 	backtoHome.click();
+	
+
+	String actualMessage=driver.getCurrentUrl();
+	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/home";
+	Assert.assertEquals(actualMessage, expectedMessage);
+	
 }
 
 @Test(priority=4, description="Verify that Reset button reloads the current page successfully")
@@ -112,6 +130,12 @@ public void verifyResetinmanageNews() throws InterruptedException, IOException
 	// reset
 	WebElement reset=driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
 	reset.click();
+	
+	
+	String actualMessage=driver.getCurrentUrl();
+	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/list-news";
+	Assert.assertEquals(actualMessage, expectedMessage);
+	
 }
 
 

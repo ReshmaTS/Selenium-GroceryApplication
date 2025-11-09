@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
@@ -35,6 +36,12 @@ public class HomeTest extends TestNGBase {
 		//WebElement logout=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']//i[@class='ace-icon fa fa-power-off']"));
 		WebElement logout=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']//child ::i[@class='ace-icon fa fa-power-off']"));
 		logout.click();
+		
+		//Assertion
+		WebElement loginbox = driver.findElement(By.xpath("//p[@class='login-box-msg']"));
+        Assert.assertTrue(loginbox.isDisplayed());
+
+		
 		
 	}
 
