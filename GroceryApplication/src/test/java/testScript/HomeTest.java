@@ -41,6 +41,7 @@ public class HomeTest extends TestNGBase {
 		WebElement loginbox = driver.findElement(By.xpath("//p[@class='login-box-msg']"));
         Assert.assertTrue(loginbox.isDisplayed());
 
+     
 		
 		
 	}
