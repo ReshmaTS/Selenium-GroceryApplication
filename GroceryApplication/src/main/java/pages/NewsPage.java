@@ -34,4 +34,36 @@ public class NewsPage
 		WebElement save=driver.findElement(By.xpath("//button[@name='create']"));
 		save.click();
 	}
+	
+	
+	public void searchButton()
+	{
+		WebElement newssearch=driver.findElement(By.xpath("//a[@onclick='click_button(2)']"));
+		newssearch.click();
+	}
+	
+	public void searchTopicinTextbox()
+	{
+		WebElement  todaysnews=driver.findElement(By.xpath("//input[@class='form-control']"));
+		todaysnews.sendKeys("Todays headlines");
+	}
+	
+	public void searchNews()
+	{
+		WebElement  searchnews=driver.findElement(By.xpath("//button[@class='btn btn-danger btn-fix']"));
+		searchnews.click();
+	}
+	
+	public void backtoHome()
+	{
+		WebElement backtoHome=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/home']"));
+		backtoHome.click();
+	}
+	
+	public void resetbutton()
+	{
+		WebElement reset=driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
+		reset.click();
+		
+	}
 }

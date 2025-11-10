@@ -5,9 +5,10 @@
     <classes>
       <class name="testScript.NewsTest">
         <methods>
+          <include name="verifyResetinmanageNews"/>
           <include name="verifyManageNews"/>
-          <include name="closeBrowser"/>
           <include name="initializeBrowser"/>
+          <include name="closeBrowser"/>
         </methods>
       </class> <!-- testScript.NewsTest -->
     </classes>

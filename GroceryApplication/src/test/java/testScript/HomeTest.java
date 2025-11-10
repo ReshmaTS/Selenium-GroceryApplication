@@ -8,6 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import pages.HomePage;
+import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomeTest extends TestNGBase {
@@ -18,14 +20,33 @@ public class HomeTest extends TestNGBase {
 	{
 		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
 		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
-		WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
+		
+		
+		//Login to Grocery Application
+				LoginPage loginpage = new LoginPage(driver);
+				loginpage.enterUserName(usernameValue);
+				loginpage.enterPassword(passwordValue);
+				loginpage.signin();
+		
+		
+		
+		
+		
+		/*WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 		username.sendKeys(usernameValue);
 		WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
 		password.sendKeys(passwordValue);
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
 		//wait for2.5sec before selecting admin 
-		Thread.sleep(2500);
+		Thread.sleep(2500);  */
+				
+				
+				HomePage homepage = new HomePage(driver);
+				homepage.adminButton();
+				homepage.logout();
+				
+		/*		
 	// admin profile selection
 		WebElement admin=driver.findElement(By.xpath("//a[@class='nav-link']//img[@class='img-circle']"));
 		admin.click();
@@ -36,6 +57,8 @@ public class HomeTest extends TestNGBase {
 		//WebElement logout=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']//i[@class='ace-icon fa fa-power-off']"));
 		WebElement logout=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']//child ::i[@class='ace-icon fa fa-power-off']"));
 		logout.click();
+		
+		*/
 		
 		//Assertion
 		WebElement loginbox = driver.findElement(By.xpath("//p[@class='login-box-msg']"));

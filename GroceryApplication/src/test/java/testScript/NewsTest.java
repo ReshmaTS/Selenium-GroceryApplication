@@ -8,6 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import pages.LoginPage;
+import pages.NewsPage;
 import utilities.ExcelUtility;
 
 
@@ -18,12 +20,24 @@ public class NewsTest extends TestNGBase
 		{
 		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
 		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
+		
+		
+
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterUserName(usernameValue);
+		loginpage.enterPassword(passwordValue);
+		loginpage.signin();
+		
+		
+		/*
 		WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 		username.sendKeys(usernameValue);
 		WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
 		password.sendKeys(passwordValue);
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
+		
+		
 		
 		// manage News
 		WebElement manageNews=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and@class='small-box-footer']"));
@@ -38,7 +52,14 @@ public class NewsTest extends TestNGBase
 		WebElement save=driver.findElement(By.xpath("//button[@name='create']"));
 		save.click();
 		
+		*/
 		
+		NewsPage newspage=new NewsPage(driver);
+		newspage.manageNewsButton();
+		newspage.createNewsbutton();
+		newspage.enterNews();
+		newspage.savebutton();
+
 		
 		//Assertion
 		WebElement newalertbox = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
@@ -52,12 +73,29 @@ public void searchNews() throws IOException, InterruptedException
 {
 	String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
 	String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
+	
+	
+	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);
 	WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
 	password.sendKeys(passwordValue);
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
+	*/
+	LoginPage loginpage=new LoginPage(driver);
+	loginpage.enterUserName(usernameValue);
+	loginpage.enterPassword(passwordValue);
+	loginpage.signin();
+	
+	NewsPage newspage=new NewsPage(driver);
+	newspage.manageNewsButton();
+	newspage.searchButton();
+	newspage.searchTopicinTextbox();
+	newspage.searchNews();
+	
+	
+	/*
 	
 	// manage News
 	WebElement manageNews=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and@class='small-box-footer']"));
@@ -76,7 +114,7 @@ public void searchNews() throws IOException, InterruptedException
 	searchnews.click();
 	Thread.sleep(2500);	
 	
-	
+	*/
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/news/index";
 	Assert.assertEquals(actualMessage, expectedMessage);
@@ -88,6 +126,19 @@ public void verifyBacktoHomeFromManageNews() throws IOException, InterruptedExce
 {
 	String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
 	String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
+	
+	
+	
+	LoginPage loginpage=new LoginPage(driver);
+	loginpage.enterUserName(usernameValue);
+	loginpage.enterPassword(passwordValue);
+	loginpage.signin();
+	
+	NewsPage newspage=new NewsPage(driver);
+	newspage.manageNewsButton();
+	newspage.backtoHome();
+	
+	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);
 	WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
@@ -104,7 +155,7 @@ public void verifyBacktoHomeFromManageNews() throws IOException, InterruptedExce
 	WebElement backtoHome=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/home']"));
 	backtoHome.click();
 	
-
+*/
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/home";
 	Assert.assertEquals(actualMessage, expectedMessage);
@@ -114,8 +165,23 @@ public void verifyBacktoHomeFromManageNews() throws IOException, InterruptedExce
 @Test(priority=4, description="Verify that Reset button reloads the current page successfully")
 public void verifyResetinmanageNews() throws InterruptedException, IOException
 {
+	
+	
 	String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
 	String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
+	
+	
+
+	LoginPage loginpage=new LoginPage(driver);
+	loginpage.enterUserName(usernameValue);
+	loginpage.enterPassword(passwordValue);
+	loginpage.signin();
+	
+	NewsPage newspage=new NewsPage(driver);
+	newspage.manageNewsButton();
+	newspage.resetbutton();
+	
+	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);
 	WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
@@ -131,7 +197,7 @@ public void verifyResetinmanageNews() throws InterruptedException, IOException
 	WebElement reset=driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
 	reset.click();
 	
-	
+	*/
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/list-news";
 	Assert.assertEquals(actualMessage, expectedMessage);

@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends TestNGBase {
@@ -19,6 +20,14 @@ public class LoginTest extends TestNGBase {
 		
 		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
 		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
+		
+		
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterUserName(usernameValue);
+		loginpage.enterPassword(passwordValue);
+		loginpage.signin();
+		
+		/*
 		WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 		username.sendKeys(usernameValue);
 		WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
@@ -27,11 +36,18 @@ public class LoginTest extends TestNGBase {
 		
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
-		// hard assertion
-		String actual=driver.getCurrentUrl();
-		String expected="https://groceryapp.uniqassosiates.com/admin";
-		Assert.assertEquals(actual,expected);
 		
+		*/
+		
+		
+		
+		// hard assertion
+		
+		
+		
+		String actual = driver.getCurrentUrl();
+		String expected = "https://groceryapp.uniqassosiates.com/admin";
+		Assert.assertEquals(actual,expected);
 	}
 	
 @Test(priority=2, description= "Verify Login with Valid username and invalid password")
@@ -39,6 +55,15 @@ public void verifyValidusernameInvalidPassword() throws IOException
 {
 	String usernameValue=ExcelUtility.getStringData(2, 0, "LoginSheet");
 	String passwordValue=ExcelUtility.getStringData(2, 1, "LoginSheet");
+	
+
+	LoginPage loginpage=new LoginPage(driver);
+	loginpage.enterUserName(usernameValue);
+	loginpage.enterPassword(passwordValue);
+	loginpage.signin();
+	
+	
+	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);
 	WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
@@ -47,6 +72,7 @@ public void verifyValidusernameInvalidPassword() throws IOException
 	
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
+	*/
 	// Assertion
 	
 	String actualMessage=driver.getCurrentUrl();
@@ -59,6 +85,15 @@ public void verifyInvalidusernamevalidPass() throws IOException
 {
 	String usernameValue=ExcelUtility.getStringData(3, 0, "LoginSheet");
 	String passwordValue=ExcelUtility.getStringData(3, 1, "LoginSheet");
+	
+
+	LoginPage loginpage=new LoginPage(driver);
+	loginpage.enterUserName(usernameValue);
+	loginpage.enterPassword(passwordValue);
+	loginpage.signin();
+	
+	
+	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);
 	WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
@@ -67,7 +102,7 @@ public void verifyInvalidusernamevalidPass() throws IOException
 	
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
-	
+	*/
 	
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
@@ -81,6 +116,8 @@ public void verifyInvalidusernameInvalidpassword() throws IOException
 	
 	String usernameValue=ExcelUtility.getStringData(4, 0, "LoginSheet");
 	String passwordValue=ExcelUtility.getStringData(4, 1, "LoginSheet");
+	
+	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);
 	WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
@@ -89,6 +126,15 @@ public void verifyInvalidusernameInvalidpassword() throws IOException
 	
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
+	
+	*/
+	
+	
+	LoginPage loginpage=new LoginPage(driver);
+	loginpage.enterUserName(usernameValue);
+	loginpage.enterPassword(passwordValue);
+	loginpage.signin();
+	
 	
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
