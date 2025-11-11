@@ -1,5 +1,6 @@
 package pages;
 
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +28,17 @@ public class LoginPage {
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
 	}
+ // assertion
+	public String  validcredentialsAssertion()
+	{
+		String actual=driver.getTitle();
+		return actual;		
+}
+	// assertion
+  public String Invalidcredentials()
+  {
+	  String actual=driver.getCurrentUrl();
+	  return actual;
+  }
 
-	
 }

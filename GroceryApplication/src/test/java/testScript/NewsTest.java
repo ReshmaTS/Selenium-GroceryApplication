@@ -20,14 +20,11 @@ public class NewsTest extends TestNGBase
 		{
 		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
 		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
-		
-		
 
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserName(usernameValue);
 		loginpage.enterPassword(passwordValue);
 		loginpage.signin();
-		
 		
 		/*
 		WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
@@ -36,7 +33,6 @@ public class NewsTest extends TestNGBase
 		password.sendKeys(passwordValue);
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
-		
 		
 		
 		// manage News
@@ -51,7 +47,6 @@ public class NewsTest extends TestNGBase
 		//save the news
 		WebElement save=driver.findElement(By.xpath("//button[@name='create']"));
 		save.click();
-		
 		*/
 		
 		NewsPage newspage=new NewsPage(driver);
@@ -59,13 +54,14 @@ public class NewsTest extends TestNGBase
 		newspage.createNewsbutton();
 		newspage.enterNews();
 		newspage.savebutton();
+		newspage.isSuccessAlertDisplayed();
 
 		
 		//Assertion
-		WebElement newalertbox = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
-		Assert.assertTrue(newalertbox.isDisplayed(), "News created successfully alert box not displayed");
-		
-	}
+		//WebElement newalertbox = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']")).isDisplayed();
+		Assert.assertTrue(newspage.isSuccessAlertDisplayed(), 
+	            "News created successfully alert box not displayed");
+		} 
 
 
 @Test(priority=2, description="Verify that the Search button works correctly and displays results in ManageNews")
@@ -93,10 +89,9 @@ public void searchNews() throws IOException, InterruptedException
 	newspage.searchButton();
 	newspage.searchTopicinTextbox();
 	newspage.searchNews();
-	
+	newspage.searchbuttonAssertion();
 	
 	/*
-	
 	// manage News
 	WebElement manageNews=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and@class='small-box-footer']"));
 	manageNews.click();
@@ -113,11 +108,14 @@ public void searchNews() throws IOException, InterruptedException
 	WebElement  searchnews=driver.findElement(By.xpath("//button[@class='btn btn-danger btn-fix']"));
 	searchnews.click();
 	Thread.sleep(2500);	
-	
 	*/
-	String actualMessage=driver.getCurrentUrl();
-	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/news/index";
-	Assert.assertEquals(actualMessage, expectedMessage);
+	
+	
+	String actualUrl = driver.getCurrentUrl();
+	String expectedUrl = "https://groceryapp.uniqassosiates.com/admin/news/index";
+	Assert.assertEquals(actualUrl, expectedUrl, "URL mismatch!");
+
+	
 }
 
 @Test(priority=3, description="Verify user can go back to Home page by clicking Home button from Manage News page")
@@ -137,7 +135,7 @@ public void verifyBacktoHomeFromManageNews() throws IOException, InterruptedExce
 	NewsPage newspage=new NewsPage(driver);
 	newspage.manageNewsButton();
 	newspage.backtoHome();
-	
+	newspage.backtohomeAssertion();	
 	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);
@@ -180,7 +178,7 @@ public void verifyResetinmanageNews() throws InterruptedException, IOException
 	NewsPage newspage=new NewsPage(driver);
 	newspage.manageNewsButton();
 	newspage.resetbutton();
-	
+	newspage.reseteAssertion();
 	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);
@@ -198,6 +196,8 @@ public void verifyResetinmanageNews() throws InterruptedException, IOException
 	reset.click();
 	
 	*/
+	
+	//Assertion
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/list-news";
 	Assert.assertEquals(actualMessage, expectedMessage);

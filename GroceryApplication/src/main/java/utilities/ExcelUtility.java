@@ -11,6 +11,8 @@ package utilities;
 	import org.apache.poi.xssf.usermodel.XSSFSheet;
 	import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import constants.Constant;
+
 	//import constant.Constants;
 
 	public class ExcelUtility {
@@ -24,8 +26,11 @@ package utilities;
 
 			{
 			
-			f=new FileInputStream("C:\\Users\\reshm\\SeleniumWorkspace\\src\\test\\resources\\TestDataExcel.xlsx");
+			//f=new FileInputStream("C:\\Users\\reshm\\SeleniumWorkspace\\src\\test\\resources\\TestDataExcel.xlsx");
 
+				
+				// created constant file
+			f=new FileInputStream(Constant.TESTDATAFILE);
 			w=new XSSFWorkbook(f);
 
 			s=w.getSheet(sheet);
@@ -40,8 +45,13 @@ package utilities;
 
 			public static String getIntegerData(int a,int b,String sheet) throws IOException {
 
-			f=new FileInputStream("C:\\Users\\reshm\\SeleniumWorkspace\\src\\test\\resources\\TestDataExcel.xlsx");
+		//f=new FileInputStream("C:\\Users\\reshm\\SeleniumWorkspace\\src\\test\\resources\\TestDataExcel.xlsx");
 			
+				
+
+				f=new FileInputStream(Constant.TESTDATAFILE);
+				
+				
 			w=new XSSFWorkbook(f);
 
 			s=w.getSheet(sheet);

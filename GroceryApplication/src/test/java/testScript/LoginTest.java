@@ -2,6 +2,7 @@ package testScript;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.util.Constants;
 import org.apache.xmlbeans.impl.xpath.XPath;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -26,6 +27,7 @@ public class LoginTest extends TestNGBase {
 		loginpage.enterUserName(usernameValue);
 		loginpage.enterPassword(passwordValue);
 		loginpage.signin();
+		loginpage.validcredentialsAssertion();
 		
 		/*
 		WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
@@ -33,23 +35,25 @@ public class LoginTest extends TestNGBase {
 		WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
 		password.sendKeys(passwordValue);
 		
-		
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
-		
 		*/
 		
-		
-		
 		// hard assertion
+		//String actual=driver.getTitle();
+	//String expected="Dashboard | 7rmart supermarket";
+		//Assert.assertEquals(actual,expected);
 		
+		// Get the title from page method
+        String actualTitle = loginpage.validcredentialsAssertion();
+
+        // Expected title (you can also take it from Constants)
+        String expectedTitle = "Dashboard | 7rmart supermarket";
+
+        // Assertion
+        Assert.assertEquals(actualTitle, expectedTitle, "Dashboard title mismatch!");
+
 		
-		
-	
-		String actual=driver.getTitle();
-		String expected="Login | 7rmart supermarket";
-		
-		Assert.assertEquals(actual,expected);
 	}
 	
 @Test(priority=2, description= "Verify Login with Valid username and invalid password")
@@ -63,6 +67,7 @@ public void verifyValidusernameInvalidPassword() throws IOException
 	loginpage.enterUserName(usernameValue);
 	loginpage.enterPassword(passwordValue);
 	loginpage.signin();
+	loginpage.Invalidcredentials();
 	
 	
 	/*
@@ -70,13 +75,11 @@ public void verifyValidusernameInvalidPassword() throws IOException
 	username.sendKeys(usernameValue);
 	WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
 	password.sendKeys(passwordValue);
-	
-	
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
 	*/
-	// Assertion
 	
+	// Assertion
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
 	Assert.assertEquals(actualMessage, expectedMessage);
@@ -93,6 +96,8 @@ public void verifyInvalidusernamevalidPass() throws IOException
 	loginpage.enterUserName(usernameValue);
 	loginpage.enterPassword(passwordValue);
 	loginpage.signin();
+	loginpage.Invalidcredentials();
+	
 	
 	
 	/*
@@ -100,8 +105,7 @@ public void verifyInvalidusernamevalidPass() throws IOException
 	username.sendKeys(usernameValue);
 	WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
 	password.sendKeys(passwordValue);
-	
-	
+
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
 	*/
@@ -109,6 +113,8 @@ public void verifyInvalidusernamevalidPass() throws IOException
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
 	Assert.assertEquals(actualMessage, expectedMessage);
+	
+	
 }
 
 
@@ -125,10 +131,8 @@ public void verifyInvalidusernameInvalidpassword() throws IOException
 	WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
 	password.sendKeys(passwordValue);
 	
-	
 	WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 	signIn.click();	
-	
 	*/
 	
 	
@@ -136,7 +140,7 @@ public void verifyInvalidusernameInvalidpassword() throws IOException
 	loginpage.enterUserName(usernameValue);
 	loginpage.enterPassword(passwordValue);
 	loginpage.signin();
-	
+	loginpage.Invalidcredentials();
 	
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";

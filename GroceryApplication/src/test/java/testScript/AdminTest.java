@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import pages.AdminPage;
+import pages.LoginPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
@@ -19,13 +21,26 @@ public class AdminTest extends TestNGBase{
 	{
 		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
 		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
+		
+		
+		
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterUserName(usernameValue);
+		loginpage.enterPassword(passwordValue);
+		loginpage.signin();
+		
+		/*
 		WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 		username.sendKeys(usernameValue);
 		WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
 		password.sendKeys(passwordValue);
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
+		*/
 		
+		
+		
+		/*
 		// Admin users
 		WebElement adminusers=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']"));
 		adminusers.click();
@@ -35,10 +50,14 @@ public class AdminTest extends TestNGBase{
 		newAdmin.click();
 		Thread.sleep(2500);
 		
+		*/
+		
 		FakerUtility fakerUtility=new FakerUtility();
 		String randomUsername=fakerUtility.createRandomUserName();
 		String randomPassword=fakerUtility.createRandomPassword();
 		
+		
+		/*
 		WebElement newusername=driver.findElement(By.xpath("//input[@name='username']"));
 		newusername.sendKeys(randomUsername);
 		
@@ -49,14 +68,33 @@ public class AdminTest extends TestNGBase{
 		WebElement dropdown=driver.findElement(By.xpath("//select[@id='user_type']"));
 		
 		Select userType=new Select(dropdown);
-		userType.selectByVisibleText("Staff");
+	//	userType.selectByVisibleText("Staff");
+		userType.selectByVisibleText(Constants.USERTYPE_STAFF);
 		
 		WebElement saveAdmindetails=driver.findElement(By.xpath("//button[@type='submit' and @name='Create']"));
 		 saveAdmindetails.click();
-		 
+		 */
+		
+		//Page object model 
+		AdminPage adminpage=new AdminPage(driver);
+		adminpage.adminUsers();
+		adminpage.newUser();
+		adminpage.newUsername(randomUsername);
+		adminpage.newPassword(randomPassword);
+		adminpage.dropdownOption();
+		adminpage.saveAdmin();
+		adminpage.isSuccessAlertDisplayed();
+		
 		 // Assertion
-		 WebElement successfulalert=driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
-		 Assert.assertTrue(successfulalert.isDisplayed()," login page not displayed");
+		// WebElement successfulalert=driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+		// return successfulalert.isDisplayed();
+		
+		
+		    Assert.assertTrue(adminpage.isSuccessAlertDisplayed(), "Success alert is not displayed!");
+		    
+	
+		    
+		}
 	}
 
-}
+

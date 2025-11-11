@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-10T17:41:57 EST" name="Default suite" finished-at="2025-11-10T17:42:05 EST" duration-ms="7282">
+  <suite started-at="2025-11-11T14:36:30 EST" name="Default suite" finished-at="2025-11-11T14:36:39 EST" duration-ms="8935">
     <groups>
     </groups>
-    <test started-at="2025-11-10T17:41:57 EST" name="Default test" finished-at="2025-11-10T17:42:05 EST" duration-ms="7282">
-      <class name="testScript.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScript.LoginTest@368f2016]" started-at="2025-11-10T17:41:57 EST" name="initializeBrowser" finished-at="2025-11-10T17:42:02 EST" duration-ms="4284" status="PASS">
+    <test started-at="2025-11-11T14:36:30 EST" name="Default test" finished-at="2025-11-11T14:36:39 EST" duration-ms="8935">
+      <class name="testScript.AdminTest">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScript.AdminTest@692f203f]" started-at="2025-11-11T14:36:30 EST" name="initializeBrowser" finished-at="2025-11-11T14:36:34 EST" duration-ms="4253" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyLoginWithValidCredentials()[pri:1, instance:testScript.LoginTest@368f2016]" started-at="2025-11-10T17:42:02 EST" name="verifyLoginWithValidCredentials" description="Verify Login with Valid username and valid password" finished-at="2025-11-10T17:42:05 EST" duration-ms="2941" status="PASS">
+        <test-method signature="verifyAdminTest()[pri:0, instance:testScript.AdminTest@692f203f]" started-at="2025-11-11T14:36:34 EST" name="verifyAdminTest" finished-at="2025-11-11T14:36:39 EST" duration-ms="4638" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginWithValidCredentials -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScript.LoginTest@368f2016]" started-at="2025-11-10T17:42:05 EST" name="closeBrowser" finished-at="2025-11-10T17:42:05 EST" duration-ms="2" status="PASS">
+        </test-method> <!-- verifyAdminTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScript.AdminTest@692f203f]" started-at="2025-11-11T14:36:39 EST" name="closeBrowser" finished-at="2025-11-11T14:36:39 EST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testScript.LoginTest -->
+      </class> <!-- testScript.AdminTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
