@@ -45,8 +45,10 @@ public class LoginTest extends TestNGBase {
 		
 		
 		
-		String actual = driver.getCurrentUrl();
-		String expected = "https://groceryapp.uniqassosiates.com/admin";
+	
+		String actual=driver.getTitle();
+		String expected="Login | 7rmart supermarket";
+		
 		Assert.assertEquals(actual,expected);
 	}
 	
