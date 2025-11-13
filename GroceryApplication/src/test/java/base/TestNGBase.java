@@ -2,14 +2,18 @@ package base;
 
 
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import utilities.ScreenshotUtility;
 
 public class TestNGBase 
 {
@@ -18,8 +22,6 @@ public class TestNGBase
 	@BeforeMethod 
 public void initializeBrowser()
 			{
-		
-		
 		ChromeOptions options = new ChromeOptions();
 					Map<String,Object> prefs=new HashMap<>();
 					prefs.put("profile.password_manager_leak_detection", false);
@@ -45,4 +47,16 @@ public void initializeBrowser()
 				//driver.quit();
 				//System.out.println("Browser closed");
 			}
+		
+		@AfterMethod(alwaysRun = true)
+		public void driverQuit(ITestResult iTestResult) throws IOException
+		{
+			if(iTestResult.getStatus()==ITestResult.FAILURE)
+			{
+				ScreenshotUtility screenShot=new ScreenshotUtility();
+				screenShot.getScreenshot(driver, iTestResult.getName());
+			}
+			driver.quit();
+
+		}
 }

@@ -1,5 +1,7 @@
 package pages;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.util.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,15 +12,24 @@ import org.openqa.selenium.support.ui.Select;
 
 import constants.Constant;
 //import org.testng.Assert;
+import utilities.WaitUtility;
 
 public class AdminPage {
+	
+	// waitutility object
+    WaitUtility waitutility=new WaitUtility();
 	
 
 	public WebDriver driver;
 	public AdminPage(WebDriver driver) {
 	this.driver = driver;
+	
 	// page factory initialization 
 			PageFactory.initElements(driver, this);
+			
+			
+			// Implicit Wait
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 }
 	
 	
@@ -59,6 +70,8 @@ public class AdminPage {
 		
 		Select userType=new Select(dropdown);
 		//userType.selectByVisibleText("Staff");
+		
+		// using constant 
 		userType.selectByVisibleText(Constant.USERTYPE_STAFF);
 		
 	}
@@ -67,6 +80,9 @@ public class AdminPage {
 	@FindBy(xpath="//button[@type='submit' and @name='Create']")WebElement saveAdmindetails;
 	public void saveAdmin()
 	{
+		// explicit wait
+				waitutility.waitUntilClickable(driver,saveAdmindetails);
+		
 		//WebElement saveAdmindetails=driver.findElement(By.xpath("//button[@type='submit' and @name='Create']"));
 		 saveAdmindetails.click();
 	}

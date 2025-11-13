@@ -1,5 +1,7 @@
 package pages;
 
+import java.time.Duration;
+
 import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,8 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class NewsPage 
 {
+	
+	// waitutility object
+    WaitUtility waitutility=new WaitUtility();
 	
 	public WebDriver driver;
 	//Constructor 
@@ -17,6 +24,8 @@ public class NewsPage
 		
 		// page factory initialization 
 				PageFactory.initElements(driver, this);
+				// IMPLICIT WAIT
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 
 	
@@ -46,6 +55,10 @@ public class NewsPage
 	@FindBy(xpath="//button[@name='create']")WebElement save;
 	public void savebutton()
 	{
+		
+		// explicit wait
+		waitutility.waitUntilClickable(driver,save);
+		
 		//WebElement save=driver.findElement(By.xpath("//button[@name='create']"));
 		save.click();
 	}
