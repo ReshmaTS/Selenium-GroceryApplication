@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import constants.Messages;
 import pages.AdminPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -16,7 +17,7 @@ import utilities.FakerUtility;
 
 public class AdminTest extends TestNGBase{
 	
-	@Test
+	@Test(priority=1, description="verify create new admin")
 	public void verifyAdminTest() throws IOException, InterruptedException
 	{
 		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
@@ -90,9 +91,9 @@ public class AdminTest extends TestNGBase{
 		// return successfulalert.isDisplayed();
 		
 		
-		    Assert.assertTrue(adminpage.isSuccessAlertDisplayed(), "Success alert is not displayed!");
+		   // Assert.assertTrue(adminpage.isSuccessAlertDisplayed(), "Success alert is not displayed!");
 		    
-	
+		    Assert.assertTrue(adminpage.isSuccessAlertDisplayed(),Messages.CREATE_NEW_ADMIN);
 		    
 		}
 	}

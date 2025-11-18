@@ -62,7 +62,8 @@ public class HomeTest extends TestNGBase {
 		
 		//Assertion
 		WebElement loginbox = driver.findElement(By.xpath("//p[@class='login-box-msg']"));
-        Assert.assertTrue(loginbox.isDisplayed());
+       
+		Assert.assertTrue(loginbox.isDisplayed(),"  Admin logout failed");
 
      
 		

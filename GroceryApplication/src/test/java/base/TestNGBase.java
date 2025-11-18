@@ -48,6 +48,8 @@ public void initializeBrowser()
 				//System.out.println("Browser closed");
 			}
 		
+		
+		// for Screenshot 
 		@AfterMethod(alwaysRun = true)
 		public void driverQuit(ITestResult iTestResult) throws IOException
 		{

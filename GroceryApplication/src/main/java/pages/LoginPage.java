@@ -55,6 +55,7 @@ public class LoginPage {
 		signIn.click();	
 	}
 	
+	
 	// assertion
 		public String  validcredentialsAssertion()
 		{

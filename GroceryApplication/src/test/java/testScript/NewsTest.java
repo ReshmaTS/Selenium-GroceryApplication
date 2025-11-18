@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import constants.Messages;
 import pages.LoginPage;
 import pages.NewsPage;
 import utilities.ExcelUtility;
@@ -59,8 +60,12 @@ public class NewsTest extends TestNGBase
 		
 		//Assertion
 		//WebElement newalertbox = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']")).isDisplayed();
-		Assert.assertTrue(newspage.isSuccessAlertDisplayed(), 
-	            "News created successfully alert box not displayed");
+		//Assert.assertTrue(newspage.isSuccessAlertDisplayed(), 
+	        //    "News not created and the success alert box not displayed");
+	           
+	            Assert.assertTrue(newspage.isSuccessAlertDisplayed(), 
+	    	            Messages.NEWS_CREATION_ALERTBOX);
+		
 		} 
 
 
@@ -113,7 +118,8 @@ public void searchNews() throws IOException, InterruptedException
 	
 	String actualUrl = driver.getCurrentUrl();
 	String expectedUrl = "https://groceryapp.uniqassosiates.com/admin/news/index";
-	Assert.assertEquals(actualUrl, expectedUrl, "URL mismatch!");
+	// Assert.assertEquals(actualUrl, expectedUrl, "URL mismatch! and search button funcionality not as expected");
+	Assert.assertEquals(actualUrl, expectedUrl,Messages.SEARCHBOTTON_FUNCTIONALITY);
 
 	
 }
@@ -156,7 +162,9 @@ public void verifyBacktoHomeFromManageNews() throws IOException, InterruptedExce
 */
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/home";
-	Assert.assertEquals(actualMessage, expectedMessage);
+	//Assert.assertEquals(actualMessage, expectedMessage,"User is unable to go back to Home page");
+	
+	Assert.assertEquals(actualMessage, expectedMessage,Messages.BACK_TO_BUTTON);
 	
 }
 
@@ -200,7 +208,9 @@ public void verifyResetinmanageNews() throws InterruptedException, IOException
 	//Assertion
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/list-news";
-	Assert.assertEquals(actualMessage, expectedMessage);
+	//Assert.assertEquals(actualMessage, expectedMessage,"Reloading current webpage not successful");
+	
+	Assert.assertEquals(actualMessage, expectedMessage,Messages.RESET_BUTTON);
 	
 }
 

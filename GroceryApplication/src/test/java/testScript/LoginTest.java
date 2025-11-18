@@ -12,11 +12,12 @@ import org.testng.annotations.Test;
 
 import base.TestNGBase;
 import constants.Constant;
+import constants.Messages;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends TestNGBase {
-	@Test(priority=1,description= "Verify Login with Valid username and valid password")
+	@Test(priority=1,description= "Verify Login with Valid username and valid password",retryAnalyzer=retry.Retry.class)
 	
 	public void  verifyLoginWithValidCredentials() throws IOException
 	{
@@ -48,12 +49,11 @@ public class LoginTest extends TestNGBase {
 		
 		// Get the title from page method
         String actualTitle = loginpage.validcredentialsAssertion();
-
         // Expected title (you can also take it from Constants)
         String expectedTitle = "Dashboard | 7rmart supermarket";
-
         // Assertion
-        Assert.assertEquals(actualTitle, expectedTitle, "Dashboard title mismatch!");
+        Assert.assertEquals(actualTitle, expectedTitle, Messages.VALID_CREDENTIAL_ASSERT);
+        		//"Dashboard title mismatch!/login with valid credentials are failed");
 
 		
 	}
@@ -84,7 +84,10 @@ public void verifyValidusernameInvalidPassword() throws IOException
 	// Assertion
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
-	Assert.assertEquals(actualMessage, expectedMessage);
+	//Assert.assertEquals(actualMessage, expectedMessage,"login URL mismatched-Login failed");
+	
+	// Using Message class.constant --> Message class created in src/main/java , constant also
+	Assert.assertEquals(actualMessage, expectedMessage, Messages.VALIDUSERNAME_INVALIDPASSWORD_ASSERT); 
 }
 
 @Test(priority=3,description= "Verify Login with Inalid username and invalid password")
@@ -114,9 +117,12 @@ public void verifyInvalidusernamevalidPass() throws IOException
 	
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
-	Assert.assertEquals(actualMessage, expectedMessage);
 	
+	//Assert.assertEquals(actualMessage, expectedMessage,"login URL mismatched and testcase failed");
 	
+	// Using Message class.constant --> Message class created in src/main/java , constant also
+		Assert.assertEquals(actualMessage, expectedMessage,Messages.INVALIDUSERNAME_INVALIDPASSWORD_ASSERT);
+		
 }
 
 
@@ -125,7 +131,7 @@ public void verifyInvalidusernamevalidPass() throws IOException
 public void verifyInvalidusernameInvalidpassword(String username, String password) throws IOException
 //public void verifyInvalidusernameInvalidpassword() throws IOException
 {
-{
+
 	
 	//String usernameValue=ExcelUtility.getStringData(4, 0, "LoginSheet");
 	//String passwordValue=ExcelUtility.getStringData(4, 1, "LoginSheet");
@@ -156,8 +162,12 @@ public void verifyInvalidusernameInvalidpassword(String username, String passwor
 	
 	String actualMessage=driver.getCurrentUrl();
 	String expectedMessage = "https://groceryapp.uniqassosiates.com/admin/login";
-	Assert.assertEquals(actualMessage, expectedMessage);
-}}
+	//Assert.assertEquals(actualMessage, expectedMessage, " Expected URL Mismatch");
+	
+	// Using Message class.constant --> Message class created in src/main/java , constant also
+			Assert.assertEquals(actualMessage, expectedMessage, Messages.INVALIDUSERNAME_VALIDPASSWORD_ASSERT);
+	
+}
 //  Data proider concept
 @DataProvider(name="loginProvider")
 public Object[][] getDataFromDataProvider() throws IOException
