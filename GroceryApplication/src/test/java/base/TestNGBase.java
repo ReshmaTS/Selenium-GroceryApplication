@@ -13,13 +13,17 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.beust.jcommander.Parameters;
+
 import utilities.ScreenshotUtility;
 
 public class TestNGBase 
 {
 	 public  WebDriver driver;
+	// @Parameters("browser")
 	 
-	@BeforeMethod 
+	@BeforeMethod(alwaysRun = true) 
+	
 public void initializeBrowser()
 			{
 		ChromeOptions options = new ChromeOptions();

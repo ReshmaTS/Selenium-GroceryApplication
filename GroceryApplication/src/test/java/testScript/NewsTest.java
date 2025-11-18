@@ -16,7 +16,7 @@ import utilities.ExcelUtility;
 
 public class NewsTest extends TestNGBase
 {
-@Test(priority=1, description="verify user is able to create a news in Manage news")
+@Test(priority=1, description="verify user is able to create a news in Manage news", groups= {"smoke"})
 		public void verifyManageNews() throws IOException
 		{
 		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginSheet");
