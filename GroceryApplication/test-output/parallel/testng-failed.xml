@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [parallel]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="firefox"/>
+  <listeners>
+    <listener class-name="reportGeneration.Listener"/>
+  </listeners>
+  <test thread-count="5" parallel="methods" name="chromeTest(failed)">
+    <classes>
+      <class name="testScript.LoginTest">
+        <methods>
+          <include name="driverQuit"/>
+          <include name="verifyLoginWithValidCredentials"/>
+          <include name="verifyInvalidusernameInvalidpassword"/>
+          <include name="verifyInvalidusernamevalidPass"/>
+          <include name="verifyValidusernameInvalidPassword"/>
+          <include name="closeBrowser"/>
+          <include name="initializeBrowser"/>
+        </methods>
+      </class> <!-- testScript.LoginTest -->
+    </classes>
+  </test> <!-- chromeTest(failed) -->
+  <test thread-count="5" parallel="methods" name="firefoxTest(failed)">
+    <classes>
+      <class name="testScript.LoginTest">
+        <methods>
+          <include name="driverQuit"/>
+          <include name="verifyLoginWithValidCredentials"/>
+          <include name="verifyInvalidusernameInvalidpassword"/>
+          <include name="verifyInvalidusernamevalidPass"/>
+          <include name="verifyValidusernameInvalidPassword"/>
+          <include name="closeBrowser"/>
+          <include name="initializeBrowser"/>
+        </methods>
+      </class> <!-- testScript.LoginTest -->
+    </classes>
+  </test> <!-- firefoxTest(failed) -->
+</suite> <!-- Failed suite [parallel] -->

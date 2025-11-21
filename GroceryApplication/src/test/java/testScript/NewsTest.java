@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import base.TestNGBase;
 import constants.Messages;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.NewsPage;
 import utilities.ExcelUtility;
@@ -16,6 +17,8 @@ import utilities.ExcelUtility;
 
 public class NewsTest extends TestNGBase
 {
+	public HomePage home;
+	public NewsPage news;
 @Test(priority=1, description="verify user is able to create a news in Manage news", groups= {"smoke"})
 		public void verifyManageNews() throws IOException
 		{
@@ -23,10 +26,10 @@ public class NewsTest extends TestNGBase
 		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
 
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserName(usernameValue);
-		loginpage.enterPassword(passwordValue);
-		loginpage.signin();
-		
+		loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
+		//loginpage.enterPassword(passwordValue);
+		home=loginpage.signin();
+		news=home.manageNewsButton();
 		/*
 		WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 		username.sendKeys(usernameValue);
@@ -50,12 +53,13 @@ public class NewsTest extends TestNGBase
 		save.click();
 		*/
 		
-		NewsPage newspage=new NewsPage(driver);
-		newspage.manageNewsButton();
-		newspage.createNewsbutton();
+		//NewsPage newspage=new NewsPage(driver);
+		news.createNewsbutton().enterNews().savebutton();
+		
+		/* newspage.createNewsbutton();
 		newspage.enterNews();
 		newspage.savebutton();
-		newspage.isSuccessAlertDisplayed();
+		newspage.isSuccessAlertDisplayed();*/
 
 		
 		//Assertion
@@ -63,7 +67,7 @@ public class NewsTest extends TestNGBase
 		//Assert.assertTrue(newspage.isSuccessAlertDisplayed(), 
 	        //    "News not created and the success alert box not displayed");
 	           
-	            Assert.assertTrue(newspage.isSuccessAlertDisplayed(), 
+	            Assert.assertTrue(news.isSuccessAlertDisplayed(), 
 	    	            Messages.NEWS_CREATION_ALERTBOX);
 		
 		} 
@@ -85,16 +89,17 @@ public void searchNews() throws IOException, InterruptedException
 	signIn.click();	
 	*/
 	LoginPage loginpage=new LoginPage(driver);
-	loginpage.enterUserName(usernameValue);
-	loginpage.enterPassword(passwordValue);
-	loginpage.signin();
+	loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
+	//loginpage.enterPassword(passwordValue);
+	home=loginpage.signin();
+	news=home.manageNewsButton();
 	
-	NewsPage newspage=new NewsPage(driver);
-	newspage.manageNewsButton();
-	newspage.searchButton();
-	newspage.searchTopicinTextbox();
-	newspage.searchNews();
-	newspage.searchbuttonAssertion();
+	//NewsPage newspage=new NewsPage(driver);
+	news.searchButton().searchTopicinTextbox().searchNews();
+	//newspage.searchButton();
+	//newspage.searchTopicinTextbox();
+	//newspage.searchNews();
+	//newspage.searchbuttonAssertion();
 	
 	/*
 	// manage News
@@ -134,14 +139,14 @@ public void verifyBacktoHomeFromManageNews() throws IOException, InterruptedExce
 	
 	
 	LoginPage loginpage=new LoginPage(driver);
-	loginpage.enterUserName(usernameValue);
-	loginpage.enterPassword(passwordValue);
-	loginpage.signin();
+	loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
+	//loginpage.enterPassword(passwordValue);
+	home=loginpage.signin();
 	
-	NewsPage newspage=new NewsPage(driver);
-	newspage.manageNewsButton();
-	newspage.backtoHome();
-	newspage.backtohomeAssertion();	
+	//NewsPage newspage=new NewsPage(driver);
+	news=home.manageNewsButton();
+	home=news.backtoHome();
+	//newspage.backtohomeAssertion();	
 	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);
@@ -179,14 +184,14 @@ public void verifyResetinmanageNews() throws InterruptedException, IOException
 	
 
 	LoginPage loginpage=new LoginPage(driver);
-	loginpage.enterUserName(usernameValue);
-	loginpage.enterPassword(passwordValue);
-	loginpage.signin();
+	loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
+	//loginpage.enterPassword(passwordValue);
+	home=loginpage.signin();
 	
-	NewsPage newspage=new NewsPage(driver);
-	newspage.manageNewsButton();
-	newspage.resetbutton();
-	newspage.reseteAssertion();
+	//NewsPage newspage=new NewsPage(driver);
+	news=home.manageNewsButton();
+	news.resetbutton();
+	news.reseteAssertion();
 	/*
 	WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
 	username.sendKeys(usernameValue);

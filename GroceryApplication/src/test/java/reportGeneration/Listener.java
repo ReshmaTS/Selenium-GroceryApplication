@@ -120,6 +120,4 @@ public class Listener implements ITestListener{
 		extent.flush();
 	}
 
-	
-
 }

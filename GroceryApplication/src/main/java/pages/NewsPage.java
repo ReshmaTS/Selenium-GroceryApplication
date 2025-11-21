@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class NewsPage 
@@ -16,6 +17,8 @@ public class NewsPage
 	
 	// waitutility object
     WaitUtility waitutility=new WaitUtility();
+    
+PageUtility pageutility=new PageUtility();
 	
 	public WebDriver driver;
 	//Constructor 
@@ -30,37 +33,43 @@ public class NewsPage
 
 	
 
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and@class='small-box-footer']")WebElement manageNews;
-	public void manageNewsButton()
-	{
-		//WebElement manageNews=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and@class='small-box-footer']"));
-		manageNews.click();
-	}
+	
 	
 	
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add' and @class='btn btn-rounded btn-danger']")WebElement createnew;
-	public void createNewsbutton()
+	public NewsPage createNewsbutton()
 	{
 		//WebElement createnew=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add' and @class='btn btn-rounded btn-danger']"));
-		createnew.click();
+		//createnew.click();
+		
+		pageutility.clickOnElement(createnew);
+		return this;
+		
 	}
 	
 	@FindBy(id="news")WebElement textbox;
-	public void enterNews()
+	public NewsPage enterNews()
 	{
 		//WebElement textbox=driver.findElement(By.id("news"));
-		textbox.sendKeys("Todays news Headlines");
+		//textbox.sendKeys("Todays news Headlines");
+		
+		pageutility.sendDataToElement(textbox, "Todays news Headlines");
+		return this;
 	}
 	
+	
+	
 	@FindBy(xpath="//button[@name='create']")WebElement save;
-	public void savebutton()
+	public NewsPage savebutton()
 	{
 		
 		// explicit wait
 		waitutility.waitUntilClickable(driver,save);
 		
 		//WebElement save=driver.findElement(By.xpath("//button[@name='create']"));
-		save.click();
+		//save.click();
+		pageutility.clickOnElement(save);
+		return this;
 	}
 	
 	
@@ -71,24 +80,30 @@ public class NewsPage
 	
 	
 	@FindBy(xpath="//a[@onclick='click_button(2)']")WebElement newssearch;
-	public void searchButton()
+	public NewsPage searchButton()
 	{
 		//WebElement newssearch=driver.findElement(By.xpath("//a[@onclick='click_button(2)']"));
-		newssearch.click();
+		//newssearch.click();
+		pageutility.clickOnElement(newssearch);
+		return this;
 	}
 	
 	@FindBy(xpath="//input[@class='form-control']")WebElement todaysnews;
-	public void searchTopicinTextbox()
+	public NewsPage searchTopicinTextbox()
 	{
 		//WebElement  todaysnews=driver.findElement(By.xpath("//input[@class='form-control']"));
-		todaysnews.sendKeys("Todays headlines");
+		//todaysnews.sendKeys("Todays headlines");
+		pageutility.sendDataToElement(todaysnews ,"Todays headlines");
+		return this;
 	}
 	
 	@FindBy(xpath="//button[@class='btn btn-danger btn-fix']")WebElement searchnews;
-	public void searchNews()
+	public NewsPage searchNews()
 	{
 		//WebElement  searchnews=driver.findElement(By.xpath("//button[@class='btn btn-danger btn-fix']"));
-		searchnews.click();
+		//searchnews.click();
+		pageutility.clickOnElement(searchnews);
+		return this;
 	}
 	
 	
@@ -100,10 +115,12 @@ public class NewsPage
 	
 	
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/home']")WebElement backtoHome;
-	public void backtoHome()
+	public HomePage backtoHome()
 	{
 		//WebElement backtoHome=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/home']"));
-		backtoHome.click();
+		//backtoHome.click();
+		pageutility.clickOnElement(backtoHome);
+		return new HomePage(driver);
 	}
 	
 	
@@ -118,14 +135,14 @@ public class NewsPage
 	public void resetbutton()
 	{
 		//WebElement reset=driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
-		reset.click();
+		//reset.click();
+		pageutility.clickOnElement(reset);
 	}
 	
 	public String reseteAssertion()
 	{
 		 return driver.getCurrentUrl();
 	}
-	
 	
 	
 	public boolean assertionrefresh()

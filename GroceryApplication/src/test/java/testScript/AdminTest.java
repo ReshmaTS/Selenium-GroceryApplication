@@ -11,12 +11,14 @@ import org.testng.annotations.Test;
 import base.TestNGBase;
 import constants.Messages;
 import pages.AdminPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class AdminTest extends TestNGBase{
-	
+	public HomePage homepage;
+	public AdminPage adminpage;
 	@Test(priority=1, description="verify create new admin")
 	public void verifyAdminTest() throws IOException, InterruptedException
 	{
@@ -24,11 +26,11 @@ public class AdminTest extends TestNGBase{
 		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginSheet");
 		
 		
-		
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserName(usernameValue);
-		loginpage.enterPassword(passwordValue);
-		loginpage.signin();
+		loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
+		//loginpage.enterPassword(passwordValue);
+		homepage=loginpage.signin();
+		adminpage=homepage.adminUsers();
 		
 		/*
 		WebElement username=driver.findElement(By.xpath("//input[@name='username']"));
@@ -38,7 +40,6 @@ public class AdminTest extends TestNGBase{
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
 		*/
-		
 		
 		
 		/*
@@ -77,13 +78,14 @@ public class AdminTest extends TestNGBase{
 		 */
 		
 		//Page object model 
-		AdminPage adminpage=new AdminPage(driver);
-		adminpage.adminUsers();
-		adminpage.newUser();
-		adminpage.newUsername(randomUsername);
+		//AdminPage adminpage=new AdminPage(driver);
+		//adminpage.adminUsers();
+		//adminpage.newUser();
+		 /*adminpage.newUsername(randomUsername);
 		adminpage.newPassword(randomPassword);
 		adminpage.dropdownOption();
-		adminpage.saveAdmin();
+		adminpage.saveAdmin(); */
+		adminpage.newUser().newUsername(randomUsername).newPassword(randomPassword).dropdownOption().saveAdmin();
 		adminpage.isSuccessAlertDisplayed();
 		
 		 // Assertion

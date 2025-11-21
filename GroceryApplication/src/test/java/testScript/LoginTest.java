@@ -13,10 +13,13 @@ import org.testng.annotations.Test;
 import base.TestNGBase;
 import constants.Constant;
 import constants.Messages;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends TestNGBase {
+	
+	public HomePage home;
 	@Test(priority=1,description= "Verify Login with Valid username and valid password",retryAnalyzer=retry.Retry.class)
 	
 	public void  verifyLoginWithValidCredentials() throws IOException
@@ -27,9 +30,14 @@ public class LoginTest extends TestNGBase {
 		
 		
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserName(usernameValue);
-		loginpage.enterPassword(passwordValue);
-		loginpage.signin();
+		
+		//loginpage.enterUserName(usernameValue);
+		// for chaining purpose
+		loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
+		//loginpage.enterPassword(passwordValue);
+		
+		//loginpage.signin(); changed this for chaining purpose
+		home=loginpage.signin();
 		loginpage.validcredentialsAssertion();
 		
 		/*
@@ -66,9 +74,9 @@ public void verifyValidusernameInvalidPassword() throws IOException
 	
 
 	LoginPage loginpage=new LoginPage(driver);
-	loginpage.enterUserName(usernameValue);
-	loginpage.enterPassword(passwordValue);
-	loginpage.signin();
+	loginpage.enterUserName(usernameValue).enterPassword(passwordValue).signin();
+	//loginpage.enterPassword(passwordValue);
+	//loginpage.signin();
 	loginpage.Invalidcredentials();
 	
 	
@@ -98,9 +106,9 @@ public void verifyInvalidusernamevalidPass() throws IOException
 	
 
 	LoginPage loginpage=new LoginPage(driver);
-	loginpage.enterUserName(usernameValue);
-	loginpage.enterPassword(passwordValue);
-	loginpage.signin();
+	loginpage.enterUserName(usernameValue).enterPassword(passwordValue).signin();
+	//loginpage.enterPassword(passwordValue);
+	//loginpage.signin();
 	loginpage.Invalidcredentials();
 	
 	
@@ -154,10 +162,10 @@ public void verifyInvalidusernameInvalidpassword(String username, String passwor
 	
 	LoginPage loginpage=new LoginPage(driver);
 	//loginpage.enterUserName(usernameValue);
-	//loginpage.enterPassword(passwordValue);
-	loginpage.enterUserName(username);
-	loginpage.enterPassword(password);
-	loginpage.signin();
+	loginpage.enterUserName(username).enterPassword(password).signin();
+	//loginpage.enterUserName(username);
+	//loginpage.enterPassword(password);
+	//loginpage.signin();
 	loginpage.Invalidcredentials();
 	
 	String actualMessage=driver.getCurrentUrl();
