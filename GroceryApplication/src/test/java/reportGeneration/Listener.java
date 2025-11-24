@@ -21,6 +21,7 @@ public class Listener implements ITestListener{
 
 		ITestListener.super.onTestStart(result);
 		//test = extent.createTest(result.getMethod().getMethodName());
+		
 		// Get test method name
 	    String methodName = result.getMethod().getMethodName();
 

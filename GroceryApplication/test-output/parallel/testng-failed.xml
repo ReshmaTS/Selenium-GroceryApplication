@@ -10,8 +10,8 @@
       <class name="testScript.LoginTest">
         <methods>
           <include name="driverQuit"/>
+          <include name="verifyInvalidusernameInvalidpassword" invocation-numbers="0"/>
           <include name="verifyLoginWithValidCredentials"/>
-          <include name="verifyInvalidusernameInvalidpassword"/>
           <include name="verifyInvalidusernamevalidPass"/>
           <include name="verifyValidusernameInvalidPassword"/>
           <include name="closeBrowser"/>
@@ -25,8 +25,8 @@
       <class name="testScript.LoginTest">
         <methods>
           <include name="driverQuit"/>
-          <include name="verifyLoginWithValidCredentials"/>
           <include name="verifyInvalidusernameInvalidpassword"/>
+          <include name="verifyLoginWithValidCredentials"/>
           <include name="verifyInvalidusernamevalidPass"/>
           <include name="verifyValidusernameInvalidPassword"/>
           <include name="closeBrowser"/>

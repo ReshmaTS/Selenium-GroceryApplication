@@ -3,6 +3,8 @@ package utilities;
 import com.github.javafaker.Faker;
 
 public class FakerUtility {
+	// Faker is a java class 
+	// create Faker object
 Faker faker = new Faker();
 	
 	public String createRandomUserName() {

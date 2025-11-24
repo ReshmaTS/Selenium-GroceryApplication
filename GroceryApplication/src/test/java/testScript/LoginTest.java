@@ -24,7 +24,7 @@ public class LoginTest extends TestNGBase {
 	
 	public void  verifyLoginWithValidCredentials() throws IOException
 	{
-		
+		// used to read username and password value from excel sheet
 		String usernameValue=ExcelUtility.getStringData(1, 0,Constant.LOGINSHEET);
 		String passwordValue=ExcelUtility.getStringData(1, 1, Constant.LOGINSHEET);
 		
@@ -176,11 +176,12 @@ public void verifyInvalidusernameInvalidpassword(String username, String passwor
 			Assert.assertEquals(actualMessage, expectedMessage, Messages.INVALIDUSERNAME_VALIDPASSWORD_ASSERT);
 	
 }
-//  Data proider concept
+//  Data provider concept
 @DataProvider(name="loginProvider")
 public Object[][] getDataFromDataProvider() throws IOException
 {
-	return new Object[][] { new Object[] {"user","password"},
+	return new Object[][] 
+	{   new Object[] {"user","password"},
 		new Object[] {"username","pass"},
 		new Object[] {"user","password"}
 	};

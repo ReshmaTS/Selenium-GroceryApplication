@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite parallel="methods" name="Failed suite [parallel]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="firefox"/>
+  <listeners>
+    <listener class-name="reportGeneration.Listener"/>
+  </listeners>
+  <test thread-count="5" parallel="methods" name="chromeTest(failed)">
     <classes>
       <class name="testScript.LoginTest">
         <methods>
           <include name="driverQuit"/>
+          <include name="verifyInvalidusernameInvalidpassword" invocation-numbers="0"/>
           <include name="verifyLoginWithValidCredentials"/>
+          <include name="verifyInvalidusernamevalidPass"/>
+          <include name="verifyValidusernameInvalidPassword"/>
           <include name="closeBrowser"/>
           <include name="initializeBrowser"/>
         </methods>
       </class> <!-- testScript.LoginTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- chromeTest(failed) -->
+  <test thread-count="5" parallel="methods" name="firefoxTest(failed)">
+    <classes>
+      <class name="testScript.LoginTest">
+        <methods>
+          <include name="driverQuit"/>
+          <include name="verifyInvalidusernameInvalidpassword"/>
+          <include name="verifyLoginWithValidCredentials"/>
+          <include name="verifyInvalidusernamevalidPass"/>
+          <include name="verifyValidusernameInvalidPassword"/>
+          <include name="closeBrowser"/>
+          <include name="initializeBrowser"/>
+        </methods>
+      </class> <!-- testScript.LoginTest -->
+    </classes>
+  </test> <!-- firefoxTest(failed) -->
+</suite> <!-- Failed suite [parallel] -->

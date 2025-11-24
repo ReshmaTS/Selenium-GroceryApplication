@@ -62,13 +62,10 @@ public class AdminTest extends TestNGBase{
 		/*
 		WebElement newusername=driver.findElement(By.xpath("//input[@name='username']"));
 		newusername.sendKeys(randomUsername);
-		
 		WebElement newpassword=driver.findElement(By.xpath("//input[@name='password']"));
 		newpassword.sendKeys(randomPassword);
 		
-		
 		WebElement dropdown=driver.findElement(By.xpath("//select[@id='user_type']"));
-		
 		Select userType=new Select(dropdown);
 	//	userType.selectByVisibleText("Staff");
 		userType.selectByVisibleText(Constants.USERTYPE_STAFF);

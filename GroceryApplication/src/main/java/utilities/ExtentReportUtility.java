@@ -4,7 +4,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReportUtility {
-	// kind of default code ????????????
+	
+	//ExtentReports is class used in Selenium/TestNG to create HTML test reports
 		public static final ExtentReports extentReports = new ExtentReports();//static instance of extentreports that can be shared accross the application
 
 		public synchronized static ExtentReports createExtentReports() {
@@ -13,7 +14,7 @@ public class ExtentReportUtility {
 			reporter.config().setReportName("7R Mart SuperMarket");
 			extentReports.attachReporter(reporter);
 			extentReports.setSystemInfo("Organization", "Obsqura");
-			extentReports.setSystemInfo("Name", " Reshma"); //provides context of the report
+			extentReports.setSystemInfo("Name", " Reshma"); //provides tester details
 			return extentReports;
 		}
 	}

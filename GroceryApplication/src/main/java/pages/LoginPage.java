@@ -28,12 +28,14 @@ public class LoginPage {
 		this.driver = driver;	
 		
 		// page factory initialization 
+		//It initializes all web elements in your page class and locates them using @FindBy
 		PageFactory.initElements(driver, this);
+		
 		// IMPLICIT WAIT
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
-	@FindBy(xpath="//input[@name='username']")WebElement username;
 	
+	@FindBy(xpath="//input[@name='username']")WebElement username;
 	//public void enterUserName(String usernameValue)
 // change void to LoginPage (Chaining)
 	public LoginPage enterUserName(String usernameValue)

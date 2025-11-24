@@ -39,9 +39,7 @@ public class HomeTest extends TestNGBase {
 		password.sendKeys(passwordValue);
 		WebElement signIn=driver.findElement(By.xpath("//button[@type='submit']"));
 		signIn.click();	
-		//wait for2.5sec before selecting admin 
-		Thread.sleep(2500);  */
-				
+		
 				
 				//HomePage homepage = new HomePage(driver);
 				home.adminButton();
@@ -52,8 +50,7 @@ public class HomeTest extends TestNGBase {
 		WebElement admin=driver.findElement(By.xpath("//a[@class='nav-link']//img[@class='img-circle']"));
 		admin.click();
 		
-		// Wait for 2.5 seconds before logout
-		Thread.sleep(2500);
+		
 		// logout
 		//WebElement logout=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']//i[@class='ace-icon fa fa-power-off']"));
 		WebElement logout=driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']//child ::i[@class='ace-icon fa fa-power-off']"));

@@ -25,7 +25,7 @@ public class TestNGBase
 	Properties prop;
 	FileInputStream f;
 	
-	
+	// Declares a WebDriver object
 	 public  WebDriver driver;
 	 @Parameters("browser")
 	 
@@ -42,10 +42,16 @@ public void initializeBrowser(String browser) throws Exception
 	// this is for crossbrowser testing
 if(browser.equalsIgnoreCase("chrome"))
 		{
+	//password leak protection
+	// its a class in selenium used to customize Chrome before opening 
 	ChromeOptions options = new ChromeOptions();
+	// stores Chrome settings.
 	Map<String,Object> prefs=new HashMap<>();
+	//turns OFF the password leak popup.
 	prefs.put("profile.password_manager_leak_detection", false);
+	// apply that setting to Chrome.
 	options.setExperimentalOption("prefs", prefs);
+	//open Chrome with that setting.
 	driver=new ChromeDriver(options);
 		}
 else if(browser.equalsIgnoreCase("firefox"))
@@ -90,6 +96,7 @@ driver.manage().window().maximize();
 		
 		// for Screenshot 
 		@AfterMethod(alwaysRun = true)
+		            // ITestResult --> interface provided by TestNG that contains information about a test method after it runs.
 		public void driverQuit(ITestResult iTestResult) throws IOException
 		{
 			if(iTestResult.getStatus()==ITestResult.FAILURE)

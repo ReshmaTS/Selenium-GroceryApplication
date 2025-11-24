@@ -7,8 +7,8 @@
         <methods>
           <include name="driverQuit"/>
           <include name="verifyLoginWithValidCredentials"/>
-          <include name="closeBrowser"/>
           <include name="initializeBrowser"/>
+          <include name="closeBrowser"/>
         </methods>
       </class> <!-- testScript.LoginTest -->
     </classes>

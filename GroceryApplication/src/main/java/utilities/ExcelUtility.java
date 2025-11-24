@@ -1,26 +1,19 @@
 package utilities;
 
-
-
-	
 	import java.io.FileInputStream;
 	import java.io.IOException;
-
 	import org.apache.poi.xssf.usermodel.XSSFCell;
 	import org.apache.poi.xssf.usermodel.XSSFRow;
 	import org.apache.poi.xssf.usermodel.XSSFSheet;
 	import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import constants.Constant;
-
-	//import constant.Constants;
+    import constants.Constant;
 
 	public class ExcelUtility {
-			static FileInputStream f; //excel file
+			static FileInputStream f; // used to open the excel file from disk
 
-			static XSSFWorkbook w; //Book1
+			static XSSFWorkbook w; //the whole .xlsx file
 
-			static XSSFSheet s;// sheets
+			static XSSFSheet s;// specific sheet inside the workbook
 
 			public static String getStringData(int a,int b,String sheet) throws IOException // a is row ,b is column or cell
 
@@ -28,7 +21,6 @@ import constants.Constant;
 			
 			//f=new FileInputStream("C:\\Users\\reshm\\SeleniumWorkspace\\src\\test\\resources\\TestDataExcel.xlsx");
 
-				
 				// created constant file
 			f=new FileInputStream(Constant.TESTDATAFILE);
 			w=new XSSFWorkbook(f);

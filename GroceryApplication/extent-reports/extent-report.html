@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">7R Mart SuperMarket</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov 18, 2025 09:44:44 PM</span></a>
+<a href="#"><span class="badge badge-primary">Nov 24, 2025 05:15:37 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,11 +45,6 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
-</a>
-</li>
-<li class="nav-item dropdown" onclick="toggleView('exception-view')">
-<a id="nav-exception" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -72,8 +67,6 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
-<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
-<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -81,83 +74,40 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyInvalidusernamevalidPass</p>
+            <p class="name">adminLogout</p>
             <p class="text-sm">
-              <span>9:45:02 PM</span> / <span>00:00:00:267</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>5:15:42 PM</span> / <span>00:00:01:711</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">verifyInvalidusernamevalidPass</h5>
-<span class='badge badge-success'>11.18.2025 9:45:02 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:03 PM</span>
-<span class='badge badge-default'>00:00:00:267</span>
+<h5 class="test-status text-pass">adminLogout</h5>
+<span class='badge badge-success'>11.24.2025 5:15:42 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:15:44 PM</span>
+<span class='badge badge-default'>00:00:01:711</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Verify Login with Inalid username and invalid password</div>
+<div class="m-t-10 m-l-5">verify Logout from admin, grocery application </div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:45:03 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:15:44 PM</td>
         <td>
-          Test Failed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:45:03 PM</td>
-        <td>
-          <textarea readonly class="code-block">java.io.IOException: Stream Closed
-	at java.base/java.io.FileInputStream.available0(Native Method)
-	at java.base/java.io.FileInputStream.available(FileInputStream.java:473)
-	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:428)
-	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:399)
-	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
-	at java.base/java.io.PushbackInputStream.read(PushbackInputStream.java:197)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.realSkip(ZipArchiveInputStream.java:1324)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.isApkSigningBlock(ZipArchiveInputStream.java:929)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextZipEntry(ZipArchiveInputStream.java:765)
-	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
-	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.<init>(ZipInputStreamZipEntrySource.java:94)
-	at org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:157)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:351)
-	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:64)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:313)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:287)
-	at utilities.ExcelUtility.getStringData(ExcelUtility.java:34)
-	at testScript.LoginTest.verifyInvalidusernamevalidPass(LoginTest.java:96)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</textarea>
-          
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -165,26 +115,26 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="skip" test-id="3"
+        <li class="test-item"  status="pass" test-id="2"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">verifyLoginWithValidCredentials</p>
             <p class="text-sm">
-              <span>9:45:02 PM</span> / <span>00:00:00:327</span>
-              <span class="badge skip-bg log float-right">Skip</span>
+              <span>5:15:47 PM</span> / <span>00:00:01:462</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-skip">verifyLoginWithValidCredentials</h5>
-<span class='badge badge-success'>11.18.2025 9:45:02 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:03 PM</span>
-<span class='badge badge-default'>00:00:00:327</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<h5 class="test-status text-pass">verifyLoginWithValidCredentials</h5>
+<span class='badge badge-success'>11.24.2025 5:15:47 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:15:49 PM</span>
+<span class='badge badge-default'>00:00:01:462</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
@@ -195,10 +145,10 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>9:45:03 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:15:49 PM</td>
         <td>
-          Test Skipped
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -206,26 +156,26 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="2"
+        <li class="test-item"  status="pass" test-id="3"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">verifyValidusernameInvalidPassword</p>
             <p class="text-sm">
-              <span>9:45:02 PM</span> / <span>00:00:00:251</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>5:15:52 PM</span> / <span>00:00:01:039</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">verifyValidusernameInvalidPassword</h5>
-<span class='badge badge-success'>11.18.2025 9:45:02 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:03 PM</span>
-<span class='badge badge-default'>00:00:00:251</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<h5 class="test-status text-pass">verifyValidusernameInvalidPassword</h5>
+<span class='badge badge-success'>11.24.2025 5:15:52 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:15:53 PM</span>
+<span class='badge badge-default'>00:00:01:039</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
@@ -236,46 +186,10 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:45:03 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:15:53 PM</td>
         <td>
-          Test Failed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:45:03 PM</td>
-        <td>
-          <textarea readonly class="code-block">org.apache.poi.EmptyFileException: The supplied file was empty (zero bytes long)
-	at org.apache.poi.util.IOUtils.peekFirstNBytes(IOUtils.java:149)
-	at org.apache.poi.poifs.filesystem.FileMagic.valueOf(FileMagic.java:209)
-	at org.apache.poi.openxml4j.opc.internal.ZipHelper.verifyZipHeader(ZipHelper.java:144)
-	at org.apache.poi.openxml4j.opc.internal.ZipHelper.openZipStream(ZipHelper.java:188)
-	at org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:156)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:351)
-	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:64)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:313)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:287)
-	at utilities.ExcelUtility.getStringData(ExcelUtility.java:34)
-	at testScript.LoginTest.verifyValidusernameInvalidPassword(LoginTest.java:64)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</textarea>
-          
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -283,40 +197,40 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="skip" test-id="4"
+        <li class="test-item"  status="pass" test-id="4"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyInvalidusernameInvalidpassword</p>
+            <p class="name">verifyInvalidusernamevalidPass</p>
             <p class="text-sm">
-              <span>9:45:04 PM</span> / <span>00:00:00:000</span>
-              <span class="badge skip-bg log float-right">Skip</span>
+              <span>5:15:57 PM</span> / <span>00:00:00:715</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-skip">verifyInvalidusernameInvalidpassword</h5>
-<span class='badge badge-success'>11.18.2025 9:45:04 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:04 PM</span>
-<span class='badge badge-default'>00:00:00:000</span>
+<h5 class="test-status text-pass">verifyInvalidusernamevalidPass</h5>
+<span class='badge badge-success'>11.24.2025 5:15:57 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:15:57 PM</span>
+<span class='badge badge-default'>00:00:00:715</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Verify Login with invalid username and valid password</div>
+<div class="m-t-10 m-l-5">Verify Login with Inalid username and invalid password</div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>9:45:04 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:15:57 PM</td>
         <td>
-          Test Skipped
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -329,9 +243,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyLoginWithValidCredentials</p>
+            <p class="name">verifyInvalidusernameInvalidpassword</p>
             <p class="text-sm">
-              <span>9:45:16 PM</span> / <span>00:00:04:501</span>
+              <span>5:16:01 PM</span> / <span>00:00:00:964</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -339,15 +253,15 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyLoginWithValidCredentials</h5>
-<span class='badge badge-success'>11.18.2025 9:45:16 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:20 PM</span>
-<span class='badge badge-default'>00:00:04:501</span>
+<h5 class="test-status text-pass">verifyInvalidusernameInvalidpassword</h5>
+<span class='badge badge-success'>11.24.2025 5:16:01 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:16:02 PM</span>
+<span class='badge badge-default'>00:00:00:964</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Verify Login with Valid username and valid password</div>
+<div class="m-t-10 m-l-5">Verify Login with invalid username and valid password</div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
@@ -355,7 +269,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:45:20 PM</td>
+        <td>5:16:02 PM</td>
         <td>
           Test Passed
         </td>
@@ -365,25 +279,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="skip" test-id="6"
+        <li class="test-item"  status="pass" test-id="6"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">verifyInvalidusernameInvalidpassword</p>
             <p class="text-sm">
-              <span>9:45:20 PM</span> / <span>00:00:00:000</span>
-              <span class="badge skip-bg log float-right">Skip</span>
+              <span>5:16:06 PM</span> / <span>00:00:00:848</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-skip">verifyInvalidusernameInvalidpassword</h5>
-<span class='badge badge-success'>11.18.2025 9:45:20 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:20 PM</span>
-<span class='badge badge-default'>00:00:00:000</span>
+<h5 class="test-status text-pass">verifyInvalidusernameInvalidpassword</h5>
+<span class='badge badge-success'>11.24.2025 5:16:06 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:16:07 PM</span>
+<span class='badge badge-default'>00:00:00:848</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -395,10 +309,10 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>9:45:20 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:16:07 PM</td>
         <td>
-          Test Skipped
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -406,25 +320,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="skip" test-id="7"
+        <li class="test-item"  status="pass" test-id="7"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">verifyInvalidusernameInvalidpassword</p>
             <p class="text-sm">
-              <span>9:45:31 PM</span> / <span>00:00:00:002</span>
-              <span class="badge skip-bg log float-right">Skip</span>
+              <span>5:16:10 PM</span> / <span>00:00:00:870</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-skip">verifyInvalidusernameInvalidpassword</h5>
-<span class='badge badge-success'>11.18.2025 9:45:31 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:31 PM</span>
-<span class='badge badge-default'>00:00:00:002</span>
+<h5 class="test-status text-pass">verifyInvalidusernameInvalidpassword</h5>
+<span class='badge badge-success'>11.24.2025 5:16:10 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:16:11 PM</span>
+<span class='badge badge-default'>00:00:00:870</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -436,10 +350,10 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>9:45:31 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:16:11 PM</td>
         <td>
-          Test Skipped
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -447,83 +361,40 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="8"
+        <li class="test-item"  status="pass" test-id="8"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyValidusernameInvalidPassword</p>
+            <p class="name">verifyAdminTest</p>
             <p class="text-sm">
-              <span>9:45:57 PM</span> / <span>00:00:00:016</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>5:16:15 PM</span> / <span>00:00:05:039</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">verifyValidusernameInvalidPassword</h5>
-<span class='badge badge-success'>11.18.2025 9:45:57 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:57 PM</span>
-<span class='badge badge-default'>00:00:00:016</span>
+<h5 class="test-status text-pass">verifyAdminTest</h5>
+<span class='badge badge-success'>11.24.2025 5:16:15 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:16:20 PM</span>
+<span class='badge badge-default'>00:00:05:039</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Verify Login with Valid username and invalid password</div>
+<div class="m-t-10 m-l-5">verify create new admin</div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:45:57 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:16:20 PM</td>
         <td>
-          Test Failed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:45:57 PM</td>
-        <td>
-          <textarea readonly class="code-block">java.io.IOException: Stream Closed
-	at java.base/java.io.FileInputStream.available0(Native Method)
-	at java.base/java.io.FileInputStream.available(FileInputStream.java:473)
-	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:428)
-	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:399)
-	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
-	at java.base/java.io.PushbackInputStream.read(PushbackInputStream.java:197)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.realSkip(ZipArchiveInputStream.java:1324)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.skipRemainderOfArchive(ZipArchiveInputStream.java:1376)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextZipEntry(ZipArchiveInputStream.java:767)
-	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
-	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.<init>(ZipInputStreamZipEntrySource.java:94)
-	at org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:157)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:351)
-	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:64)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:313)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:287)
-	at utilities.ExcelUtility.getStringData(ExcelUtility.java:34)
-	at testScript.LoginTest.verifyValidusernameInvalidPassword(LoginTest.java:64)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</textarea>
-          
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -531,78 +402,40 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="9"
+        <li class="test-item"  status="pass" test-id="9"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyInvalidusernamevalidPass</p>
+            <p class="name">verifyManageNews</p>
             <p class="text-sm">
-              <span>9:45:57 PM</span> / <span>00:00:00:013</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>5:16:23 PM</span> / <span>00:00:03:623</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">verifyInvalidusernamevalidPass</h5>
-<span class='badge badge-success'>11.18.2025 9:45:57 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:57 PM</span>
-<span class='badge badge-default'>00:00:00:013</span>
+<h5 class="test-status text-pass">verifyManageNews</h5>
+<span class='badge badge-success'>11.24.2025 5:16:23 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:16:27 PM</span>
+<span class='badge badge-default'>00:00:03:623</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Verify Login with Inalid username and invalid password</div>
+<div class="m-t-10 m-l-5">verify user is able to create a news in Manage news</div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:45:57 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:16:27 PM</td>
         <td>
-          Test Failed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:45:57 PM</td>
-        <td>
-          <textarea readonly class="code-block">org.apache.poi.openxml4j.exceptions.NotOfficeXmlFileException: No valid entries or contents found, this is not a valid OOXML (Office Open XML) file
-	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:159)
-	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.<init>(ZipInputStreamZipEntrySource.java:94)
-	at org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:157)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:351)
-	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:64)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:313)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:287)
-	at utilities.ExcelUtility.getStringData(ExcelUtility.java:34)
-	at testScript.LoginTest.verifyInvalidusernamevalidPass(LoginTest.java:96)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.util.zip.ZipException: Unexpected record signature: 0x0
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextZipEntry(ZipArchiveInputStream.java:770)
-	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
-	... 24 more
-</textarea>
-          
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -610,40 +443,40 @@ Caused by: java.util.zip.ZipException: Unexpected record signature: 0x0
 </div>
           </div>
         </li>
-        <li class="test-item"  status="skip" test-id="10"
+        <li class="test-item"  status="pass" test-id="10"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyLoginWithValidCredentials</p>
+            <p class="name">searchNews</p>
             <p class="text-sm">
-              <span>9:45:57 PM</span> / <span>00:00:01:941</span>
-              <span class="badge skip-bg log float-right">Skip</span>
+              <span>5:16:31 PM</span> / <span>00:00:02:759</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-skip">verifyLoginWithValidCredentials</h5>
-<span class='badge badge-success'>11.18.2025 9:45:57 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:45:59 PM</span>
-<span class='badge badge-default'>00:00:01:941</span>
+<h5 class="test-status text-pass">searchNews</h5>
+<span class='badge badge-success'>11.24.2025 5:16:31 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:16:33 PM</span>
+<span class='badge badge-default'>00:00:02:759</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Verify Login with Valid username and valid password</div>
+<div class="m-t-10 m-l-5">Verify that the Search button works correctly and displays results in ManageNews</div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>9:45:59 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:16:33 PM</td>
         <td>
-          Test Skipped
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -651,88 +484,40 @@ Caused by: java.util.zip.ZipException: Unexpected record signature: 0x0
 </div>
           </div>
         </li>
-        <li class="test-item"  status="skip" test-id="11"
+        <li class="test-item"  status="pass" test-id="11"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyInvalidusernameInvalidpassword</p>
+            <p class="name">verifyBacktoHomeFromManageNews</p>
             <p class="text-sm">
-              <span>9:46:00 PM</span> / <span>00:00:00:000</span>
-              <span class="badge skip-bg log float-right">Skip</span>
+              <span>5:16:37 PM</span> / <span>00:00:03:931</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-skip">verifyInvalidusernameInvalidpassword</h5>
-<span class='badge badge-success'>11.18.2025 9:46:00 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:46:00 PM</span>
-<span class='badge badge-default'>00:00:00:000</span>
+<h5 class="test-status text-pass">verifyBacktoHomeFromManageNews</h5>
+<span class='badge badge-success'>11.24.2025 5:16:37 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:16:41 PM</span>
+<span class='badge badge-default'>00:00:03:931</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Verify Login with invalid username and valid password</div>
+<div class="m-t-10 m-l-5">Verify user can go back to Home page by clicking Home button from Manage News page</div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>9:46:00 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:16:41 PM</td>
         <td>
-          Test Skipped
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="skip" test-id="13"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">verifyInvalidusernameInvalidpassword</p>
-            <p class="text-sm">
-              <span>9:46:16 PM</span> / <span>00:00:02:013</span>
-              <span class="badge skip-bg log float-right">Skip</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-skip">verifyInvalidusernameInvalidpassword</h5>
-<span class='badge badge-success'>11.18.2025 9:46:16 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:46:18 PM</span>
-<span class='badge badge-default'>00:00:02:013</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-10 m-l-5">Verify Login with invalid username and valid password</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>9:46:16 PM</td>
-        <td>
-          Test Skipped
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>9:46:18 PM</td>
-        <td>
-          Test Skipped
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -745,9 +530,9 @@ Caused by: java.util.zip.ZipException: Unexpected record signature: 0x0
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyLoginWithValidCredentials</p>
+            <p class="name">verifyResetinmanageNews</p>
             <p class="text-sm">
-              <span>9:46:16 PM</span> / <span>00:00:00:000</span>
+              <span>5:16:44 PM</span> / <span>00:00:02:409</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -755,163 +540,25 @@ Caused by: java.util.zip.ZipException: Unexpected record signature: 0x0
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyLoginWithValidCredentials</h5>
-<span class='badge badge-success'>11.18.2025 9:46:16 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:46:16 PM</span>
-<span class='badge badge-default'>00:00:00:000</span>
+<h5 class="test-status text-pass">verifyResetinmanageNews</h5>
+<span class='badge badge-success'>11.24.2025 5:16:44 PM</span>
+<span class='badge badge-danger'>11.24.2025 5:16:47 PM</span>
+<span class='badge badge-default'>00:00:02:409</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5">Verify Login with Valid username and valid password</div>
-</div>
-</div>          </div>
-        </li>
-        <li class="test-item"  status="skip" test-id="14"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">verifyInvalidusernameInvalidpassword</p>
-            <p class="text-sm">
-              <span>9:46:34 PM</span> / <span>00:00:00:001</span>
-              <span class="badge skip-bg log float-right">Skip</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-skip">verifyInvalidusernameInvalidpassword</h5>
-<span class='badge badge-success'>11.18.2025 9:46:34 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:46:34 PM</span>
-<span class='badge badge-default'>00:00:00:001</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-10 m-l-5">Verify Login with invalid username and valid password</div>
+<div class="m-t-10 m-l-5">Verify that Reset button reloads the current page successfully</div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>9:46:34 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:16:47 PM</td>
         <td>
-          Test Skipped
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="15"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">verifyLoginWithValidCredentials</p>
-            <p class="text-sm">
-              <span>9:46:34 PM</span> / <span>00:00:02:076</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">verifyLoginWithValidCredentials</h5>
-<span class='badge badge-success'>11.18.2025 9:46:34 PM</span>
-<span class='badge badge-danger'>11.18.2025 9:46:37 PM</span>
-<span class='badge badge-default'>00:00:02:076</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-10 m-l-5">Verify Login with Valid username and valid password</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:46:36 PM</td>
-        <td>
-          Test Failed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:46:36 PM</td>
-        <td>
-          <textarea readonly class="code-block">org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '4.31.0', revision: '1ef9f18787*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [93da1683-a8ac-43b9-a60e-7c5fa7a5904b, setTimeout [implicit]]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 145.0, moz:accessibilityChecks: false, moz:buildID: 20251106194447, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 33700, moz:profile: C:\Users\reshm\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteTimeouts.implicitlyWait(RemoteWebDriver.java:966)
-	at pages.LoginPage.<init>(LoginPage.java:29)
-	at testScript.LoginTest.verifyLoginWithValidCredentials(LoginTest.java:29)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.io.UncheckedIOException: java.io.IOException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7fdf2ae4 rejected from java.util.concurrent.ThreadPoolExecutor@63fddfb9[Shutting down, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 29]
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:497)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$1(JdkHttpClient.java:384)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	... 3 more
-Caused by: java.io.IOException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7fdf2ae4 rejected from java.util.concurrent.ThreadPoolExecutor@63fddfb9[Shutting down, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 29]
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:972)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:456)
-	... 8 more
-Caused by: java.util.concurrent.RejectedExecutionException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7fdf2ae4 rejected from java.util.concurrent.ThreadPoolExecutor@63fddfb9[Shutting down, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 29]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2081)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1376)
-	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.ensureExecutedAsync(HttpClientImpl.java:183)
-	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:175)
-	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:282)
-	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:251)
-	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.onReadError(Http1AsyncReceiver.java:516)
-	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onError(Http1AsyncReceiver.java:595)
-	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadSubscription.signalCompletion(SocketTube.java:645)
-	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:829)
-	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
-	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
-	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
-	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
-	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
-	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
-	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
-	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1477)
-	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1422)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1422)
-</textarea>
-          
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -928,185 +575,30 @@ Caused by: java.util.concurrent.RejectedExecutionException: Task jdk.internal.ne
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view exception-view attributes-view">
-<div class="test-list">
-<div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
-</div>
-<div class="test-list-wrapper scrollable">
-<ul class="test-list-item">
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>2</span>
-</span>
-<p class="name">java.io.IOException</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>java.io.IOException</h4>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>21:45:02 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='1'>verifyInvalidusernamevalidPass</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>21:45:57 PM</td>
-<td>
-<a href="#" class="linked" test-id='8' id='8'>verifyValidusernameInvalidPassword</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
-<p class="name">org.apache.poi.openxml4j.exceptions.NotOfficeXmlFileException</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>org.apache.poi.openxml4j.exceptions.NotOfficeXmlFileException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>21:45:57 PM</td>
-<td>
-<a href="#" class="linked" test-id='9' id='9'>verifyInvalidusernamevalidPass</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
-<p class="name">org.openqa.selenium.remote.UnreachableBrowserException</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>org.openqa.selenium.remote.UnreachableBrowserException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>21:46:34 PM</td>
-<td>
-<a href="#" class="linked" test-id='15' id='15'>verifyLoginWithValidCredentials</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
-<p class="name">org.apache.poi.EmptyFileException</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>org.apache.poi.EmptyFileException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>21:45:02 PM</td>
-<td>
-<a href="#" class="linked" test-id='2' id='2'>verifyValidusernameInvalidPassword</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="test-content scrollable">
-<div class="test-content-detail">
-<div class="detail-body"></div>
-</div>
-</div>
-</div><div class="container-fluid p-4 view dashboard-view">
+<div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov 18, 2025 09:44:44 PM</h3>
+<h3>Nov 24, 2025 05:15:37 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov 18, 2025 09:46:37 PM</h3>
+<h3>Nov 24, 2025 05:16:47 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>2</h3>
+<h3>12</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>5</h3>
+<h3>0</h3>
 </div></div>
 </div>
 </div>
@@ -1122,13 +614,13 @@ Caused by: java.util.concurrent.RejectedExecutionException: Task jdk.internal.ne
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='13%'>
-<b>2</b> tests passed
+<div><small data-tooltip='100%'>
+<b>12</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='33%'><b>5</b> tests failed,
-<b>8</b> skipped, <b data-tooltip='0%'>0</b> others
+<small data-tooltip='0%'><b>0</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
 </div>
@@ -1145,10 +637,10 @@ Caused by: java.util.concurrent.RejectedExecutionException: Task jdk.internal.ne
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='5%'><b>1</b> events passed</small></div>
+<div><small data-tooltip='100%'><b>12</b> events passed</small></div>
 <div>
-<small data-tooltip='50%'><b>10</b> events failed,
-<b data-tooltip='%'>9</b> others
+<small data-tooltip='0%'><b>0</b> events failed,
+<b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -1164,7 +656,7 @@ Caused by: java.util.concurrent.RejectedExecutionException: Task jdk.internal.ne
 </div></div>
 <script>
 var timeline = {
-"verifyInvalidusernamevalidPass":0.267,"verifyLoginWithValidCredentials":0.327,"verifyValidusernameInvalidPassword":0.251,"verifyInvalidusernameInvalidpassword":0,"verifyLoginWithValidCredentials":4.501,"verifyInvalidusernameInvalidpassword":0,"verifyInvalidusernameInvalidpassword":0.002,"verifyValidusernameInvalidPassword":0.016,"verifyInvalidusernamevalidPass":0.013,"verifyLoginWithValidCredentials":1.941,"verifyInvalidusernameInvalidpassword":0,"verifyInvalidusernameInvalidpassword":2.013,"verifyLoginWithValidCredentials":0,"verifyInvalidusernameInvalidpassword":0.001,"verifyLoginWithValidCredentials":2.076
+"adminLogout":1.711,"verifyLoginWithValidCredentials":1.462,"verifyValidusernameInvalidPassword":1.039,"verifyInvalidusernamevalidPass":0.715,"verifyInvalidusernameInvalidpassword":0.964,"verifyInvalidusernameInvalidpassword":0.848,"verifyInvalidusernameInvalidpassword":0.87,"verifyAdminTest":5.039,"verifyManageNews":3.623,"searchNews":2.759,"verifyBacktoHomeFromManageNews":3.931,"verifyResetinmanageNews":2.409
 };
 </script>
 <div class="row">
@@ -1191,10 +683,10 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 2,
-failParent: 5,
+passParent: 12,
+failParent: 0,
 warningParent: 0,
-skipParent: 8,
+skipParent: 0,
 childCount: 5,
 passChild: 0,
 failChild: 0,
@@ -1208,10 +700,10 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 1,
-failEvents: 10,
+passEvents: 12,
+failEvents: 0,
 warningEvents: 0,
-skipEvents: 9,
+skipEvents: 0,
 infoEvents: 0
 };
 </script>        </div>
